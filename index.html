@@ -434,17 +434,66 @@
     <script>
         /*
           JS Exercises
-          EX11) Write a function to add a new link into the navbar
-          EX12) Write a function to change the color of the main title
-          EX13) Write a function to change the background of the jumbotron
-          EX14) Write a function to remove all the links under "Elsewhere"
-          EX15) Write a function to change the column size for heading in jumbotron
+          
+          
+          
+          
+          
           EX16) Write a function to remove the "Search" magnifying glass icon
           EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
           EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
           EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
           EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
       */
+
+      /* EX11) Write a function to add a new link into the navbar */
+    const addLinkToNavBar = function () {
+        let navBarRef = document.querySelector("nav");
+        let newLink = document.createElement("a");
+        newLink.innerText = "This's been added by JS"
+        navBarRef.appendChild(newLink);
+    }
+
+    /* EX12) Write a function to change the color of the main title */
+
+    const changeMainTitle = function () {
+        let titleRef = document.querySelector("h1");
+        titleRef.style.color = "blue";
+    }
+
+    /* EX13) Write a function to change the background of the jumbotron */
+
+    const changeJumbo = function () {
+        let jumboRef = document.querySelector(".jumbotron");
+        jumboRef.style.backgroundColor = "pink";
+        jumboRef.classList.remove("bg-dark");
+    }
+
+    /* EX14) Write a function to remove all the links under "Elsewhere" */
+
+    const removeLinks = function () {
+        let linksSelector = document.querySelectorAll("aside > div:last-of-type > ol > li > a");
+        for (i=0; i < linksSelector.length; i++) {
+            linksSelector[i].remove();
+        }
+    }
+
+    /* EX15) Write a function to change the column size for heading in jumbotron */
+    const changeColSize = function () {
+        let colDivRed = document.querySelector(".jumbotron > div:first-child");
+        colDivRed.classList.remove("col-md-6");
+        colDivRed.classList.add("col-md-10");
+    }
+
+
+    window.onload = (event) => {
+        console.log('page is fully loaded');
+        addLinkToNavBar();
+        changeMainTitle();
+        changeJumbo();
+        removeLinks();
+        changeColSize();
+    };
     </script>
 </body>
 
