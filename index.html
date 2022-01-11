@@ -439,9 +439,9 @@
           
           
           
-          EX16) Write a function to remove the "Search" magnifying glass icon
-          EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
-          EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+     
+          
+          
           EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
           EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
       */
@@ -485,6 +485,56 @@
         colDivRed.classList.add("col-md-10");
     }
 
+    /* EX16) Write a function to remove the "Search" magnifying glass icon */
+
+    const removeMagG = function () {
+        let svgRef = document.querySelector("svg");
+        svgRef.remove();
+    }
+
+    /* EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post */
+
+    const trimBlogP = function () {
+        let secondP = document.querySelectorAll(".blog-post > p:nth-of-type(2)");
+        for (i = 0; i < secondP.length; i++) {
+            secondP[i].innerText = secondP[i].innerText.slice(50);       
+        }
+    }
+
+    /* EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title) */
+    const addBlogPost = function () {
+        let newerBtn = document.querySelector(".blog-pagination > a:last-of-type");
+        newerBtn.classList = "btn btn-outline-primary";
+        console.log(newerBtn);
+        newerBtn.addEventListener("click", function(){
+            let blogsContainer =document.querySelector(".blog-main");
+            let newBlogPost = document.createElement("div");
+            newBlogPost.classList.add("blog-post");
+            newBlogPost.innerHTML = `
+                    <h2 class="blog-post-title">Blog post by JS</h2>
+                    <p class="blog-post-meta">
+                        MM DD, YYYY by <a href="#">JS</a>
+                    </p>
+
+                    <p>
+                       empty
+                    </p>
+                    <blockquote>
+                        <p>
+                            empty
+                        </p>
+                    </blockquote>
+                    <p>
+                        empty
+                    </p>
+                    <p>
+                        empty
+                    </p>
+                `;
+            console.log(blogsContainer);
+            blogsContainer.insertBefore(newBlogPost, blogsContainer.childNodes[(blogsContainer.childNodes.length-2)]);
+        });
+    }
 
     window.onload = (event) => {
         console.log('page is fully loaded');
@@ -493,6 +543,9 @@
         changeJumbo();
         removeLinks();
         changeColSize();
+        removeMagG();
+        trimBlogP();
+        addBlogPost();
     };
     </script>
 </body>
