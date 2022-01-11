@@ -442,7 +442,7 @@
      
           
           
-          EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
+          
           EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
       */
 
@@ -536,6 +536,17 @@
         });
     }
 
+    /* EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post */
+
+    const removeLastBlogPost = function () {
+        let olderBtn = document.querySelector(".blog-pagination > a:first-of-type");
+        console.log(olderBtn);
+        olderBtn.addEventListener("click", function(){
+            let lastBlogPost = document.querySelector(".blog-post:last-of-type");
+            lastBlogPost.remove();
+        });
+    };
+
     window.onload = (event) => {
         console.log('page is fully loaded');
         addLinkToNavBar();
@@ -546,6 +557,7 @@
         removeMagG();
         trimBlogP();
         addBlogPost();
+        removeLastBlogPost();
     };
     </script>
 </body>
