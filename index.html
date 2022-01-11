@@ -24,7 +24,7 @@
             EX5) Write a selector to target the "even" links in the navbar
             EX6) Write a selector to target the last blog post
             EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives )
-            EX8) Write a selector to target the second post author
+            !!!EX8) Write a selector to target the second post author   
             EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
             EX10) Write a selector to target the footer
         */
@@ -57,6 +57,47 @@
                 font-size: 3.5rem;
             }
         }
+
+        .jumbotron h1 {
+            color: red;
+        }
+
+        .nav  *{
+            color: pink !important;
+        }
+
+        .jumbotron .lead:last-of-type {
+            border: 1px solid red;
+        }
+
+        .blog-post:first-of-type {
+            background-color: yellow;
+        }
+
+        .blog-post:last-of-type {
+            background-color: chartreuse;
+        }
+
+        nav a:nth-of-type(even) {
+            border: 1px solid green;
+        }
+
+        aside > div:not(div:last-child) > .list-unstyled > li {
+            background-color:chartreuse;
+        }
+
+        .blog-post-meta > a {
+            border: 1px solid red;
+        }
+
+        body p:last-of-type > a {
+            border: 1px solid red;
+        }
+
+        footer {
+            background-color:cyan ;
+        }
+
     </style>
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
 </head>
