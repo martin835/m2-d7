@@ -520,6 +520,7 @@
                 `;
             console.log(blogsContainer);
             blogsContainer.insertBefore(newBlogPost, blogsContainer.childNodes[(blogsContainer.childNodes.length-2)]);
+            getAuthorAlert();
         });
     }
 
@@ -542,8 +543,8 @@
         
         for (i=0; i < authorDivs.length; i++) {
             let authorName = authorDivs[i].innerText;
-            authorDivs[i].addEventListener("mouseover",function(){            
-            alert(authorName);
+            authorDivs[i].addEventListener("mouseover",function(e){            
+            alert(e.target.innerText);
         });
         }
     };
